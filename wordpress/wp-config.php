@@ -133,9 +133,7 @@ define('MAIL_SETTINGS', [
 ]);
 
 // for admin panel
-define('GENERALY_SETTINGS_ID', 25);
-define('MAIN_SETTINGS_ID', 21);
-define('KATALOG_SETTINGS_ID', 190);
+define('GENERALY_SETTINGS_ID', 22);
 
 define('PATHS_NAMES_ARRAY', [
 	'/' => '558',
@@ -149,6 +147,3 @@ define('WP_ENVIRONMENT_TYPE', 'local');
 define('SHOP_ID', '321321');
 define('SHOP_KEY', 'test_VmUiqwqcRNY8Kqk03ipeMBwrUt6ZpVB_ZZMHGvL8jtY');
 define('RETURNED_URL', 'http://localhost');
-
-
-define('WPLANG', 'ru_RU');

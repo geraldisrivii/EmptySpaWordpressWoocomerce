@@ -22,8 +22,6 @@ class AdminController{
     
         unset($response->data['ID']);
     
-        $response = apply_filters('cfs-rest-api-fields', $response, $post);
-    
         return $response;
 
     }

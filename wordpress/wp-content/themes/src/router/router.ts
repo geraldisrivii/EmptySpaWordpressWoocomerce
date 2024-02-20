@@ -7,21 +7,6 @@ const routes: Array<RouteRecordRaw> = [
         component: async () => import('@/views/main.vue'),
         name: 'main',
     },
-    {
-        path: '/katalog/:category',
-        component: async () => import('@/views/katalog.vue'),
-        name: 'katalog',
-    },
-    {
-        path: '/katalog/:category/:product_slug',
-        component: async () => import('@/views/productPage.vue'),
-        name: 'product',
-    },
-    {
-        path: '/configurator/:product',
-        component: async () => import('@/views/configurator.vue'),
-        name: 'configurator',
-    },
 ]
 
 const router = createRouter({
@@ -40,20 +25,13 @@ const router = createRouter({
 declare var preloaderOpen: () => void;
 
 import deepEqual from 'deep-equal';
-import { useGamburgerDialog } from '@/hooks/App/useGamburgerDialog';
 import store from '@/store';
-
-const { gamburgerDialog } = useGamburgerDialog(store)
 
 router.afterEach((to, from) => {
     if (to.fullPath == from.fullPath && deepEqual(to.params, from.params)) {
         console.log(to.fullPath)
         return
     }
-    if(gamburgerDialog.value){
-        gamburgerDialog.value.close()
-    }
-    
     preloaderOpen();
     window.scrollTo(0, 0)
 })

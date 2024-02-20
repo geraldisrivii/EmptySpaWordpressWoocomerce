@@ -1,113 +1,22 @@
 <template>
-    <CodeDialog ref="code_dialog_instance" />
-    <GamburgerDialog ref="gamburger_dialog_instance" />
-    <ProfileDialog v-if="isUserLoaded && user != null" ref="profile_dialog_instance" />
-    <CartDialog :isDataLoaded="isDataLoaded" ref="cart_dialog_instance" />
-    <StatusDialog v-if="isAppLoaded" ref="status_dialog_instance" />
-    <Library v-if="isAppLoaded" ref="library" />
-    <SpecDialog ref="spec_dialog_instance" />
-    <RegisterDialog v-if="isAppLoaded" v-model:isRegisterDialogShow="isRegisterDialogShow" />
-    <LoginDialog v-model:isLoginDialogShow="isLoginDialogShow" />
-    <SiteHeader v-model:isLoginDialogShow="isLoginDialogShow" v-model:isRegisterDialogShow="isRegisterDialogShow"
-        v-model:isProfileShow="isProfileShow" v-model:isBasketShow="isBasketShow" v-if="isDataLoaded" />
-    <router-view v-if="isDataLoaded"></router-view>
-    <SiteFooter v-if="isDataLoaded" />
+    <router-view></router-view>
 </template>
 <script setup lang="ts">
-// API
-import { getSettings } from './api/App/getSettings';
-// TYPES
 import { Ref, computed, onMounted, ref, watch } from 'vue';
-// COMPONENTS
-import SiteHeader from './includes/SiteHeader.vue';
+
 // STORE
 import { useVuex } from './store/useVuex';
-import { useAppSettings } from './hooks/App/useAppSettings';
-import SiteFooter from './includes/SiteFooter.vue';
-import RegisterDialog from './components/RegisterDialog.vue';
-import LoginDialog from './components/LoginDialog.vue';
-import WP from '@/axiosWP';
-import { useStoreUser } from '@/hooks/User/useStoreUser';
-import SpecDialog from './components/SpecDialog.vue';
-import { useSpecDialog } from './hooks/App/useSpecDialog';
-import { useStatusDialog } from './hooks/App/useStatusDialog';
-import { Mutations } from './store';
-import StatusDialog from './components/UI/StatusDialog.vue';
-import Library from './components/Library.vue';
-import { useLibraryDialog } from './hooks/App/useLibraryDialog';
-import { useBasketItems } from './hooks/Product/useBasketItems';
-import CartDialog from './components/CartDialog.vue';
-import { useCartDialog } from './hooks/App/useCartDialog';
-import ProfileDialog from './components/ProfileDialog.vue';
-import { useProfileDialog } from './hooks/App/useProfileDialog';
-import { useGamburgerDialog } from './hooks/App/useGamburgerDialog';
-import GamburgerDialog from './components/GamburgerDialog.vue';
-import CodeDialog from './components/CodeDialog.vue';
-import { useCodeDialog } from './hooks/App/useCodeDialog';
 
 // DATA
 let isDataLoaded: Ref<boolean> = ref(false);
-let isAppLoaded: Ref<boolean> = ref(false);
-let isUserLoaded: Ref<boolean> = ref(false);
-let isBasketShow: Ref<boolean> = ref(false)
-let isProfileShow: Ref<boolean> = ref(false)
-let isRegisterDialogShow: Ref<boolean> = ref(false)
-let isLoginDialogShow: Ref<boolean> = ref(false)
 
+declare var preloaderClose: () => void
 
-let someDialogShow: Ref<boolean> = ref(false)
-
-let store = useVuex();
-
-const { instance: spec_dialog_instance } = useSpecDialog(store)
-const { instance: status_dialog_instance } = useStatusDialog(store)
-const { instance: library } = useLibraryDialog(store)
-const { instance: cart_dialog_instance } = useCartDialog(store)
-const { instance: profile_dialog_instance } = useProfileDialog(store)
-const { instance: gamburger_dialog_instance } = useGamburgerDialog(store)
-const { instance: code_dialog_instance } = useCodeDialog(store)
-
-const { app } = useAppSettings(store)
-
-
-const { basketItems } = useBasketItems(store)
-
-watch(basketItems, () => {
-    localStorage.setItem('basket', JSON.stringify(basketItems.value))
-}, { deep: true })
-
-const { user } = useStoreUser(store);
 onMounted(async () => {
-    app.value = await getSettings()
-
-
-    isAppLoaded.value = true
-
-    await WP.post('sessions', {}, {
-        withCredentials: true
-    })
-
-    let response = await WP.get('users/current')
-    user.value = response.data.status == false ? null : response.data
-
-    isUserLoaded.value = true
-
-    setTimeout(() => {
-        store.commit(Mutations.SET_SPEC_DIALOG, spec_dialog_instance.value)
-        store.commit(Mutations.SET_STATUS_DIALOG, status_dialog_instance.value)
-        store.commit(Mutations.SET_LIBRARY_DIALOG, library.value)
-        store.commit(Mutations.SET_CART_DIALOG, cart_dialog_instance.value)
-        store.commit(Mutations.SET_PROFILE_DIALOG, profile_dialog_instance.value)
-        store.commit(Mutations.SET_GAMBURGER_DIALOG, gamburger_dialog_instance.value)
-        store.commit(Mutations.SET_CODE_DIALOG, code_dialog_instance.value)
-    }, 100)
-
-
-    // set basket items
-    let basketItemsLocalStorage = localStorage.getItem('basket')
-    basketItems.value = (basketItemsLocalStorage != null && basketItemsLocalStorage != 'undefined' ? JSON.parse(basketItemsLocalStorage) : [])
 
     isDataLoaded.value = true
+    
+    preloaderClose()
 
 })
 </script>

@@ -41,9 +41,9 @@ function wp_enqueue_scripts_func()
         }
     }
 
+    wp_enqueue_script('preloader', get_template_directory_uri() . '/libs/preloader.js', [], null, true);
     wp_enqueue_script('main', get_template_directory_uri() . '/assets/js/main.js', [], null, true);
 
 
-    wp_enqueue_script('preloader', get_template_directory_uri() . '/libs/preloader.js', [], null, true);
 }
 

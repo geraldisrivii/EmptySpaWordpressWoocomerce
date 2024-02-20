@@ -10,7 +10,6 @@ class SessionModel
         return setcookie('auth', wp_hash_password('someone'), [
             'secure' => false,
             'path' => '/',
-            // 'sameSite' => 'None',
             'expires' => time() + 5000 * 60 * 60
         ]);
     }

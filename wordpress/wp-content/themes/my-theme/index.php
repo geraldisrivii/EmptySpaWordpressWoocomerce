@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,9 +39,8 @@
 
 <body>
     <div id="app"></div>
-    <div class="preloader">
-        <img class="preloader__image" src="<?= CFS()->get('general_preloader-icon', 25) ?>"
-            alt="general_preloader-icon">
+    <div class="preloader preloader--active">
+
     </div>
     <?= wp_footer() ?>
 </body>
