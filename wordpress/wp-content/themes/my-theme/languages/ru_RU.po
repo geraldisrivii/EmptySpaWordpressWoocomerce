@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-01-07 11:56+0700\n"
+"POT-Creation-Date: 2024-02-20 18:56+0700\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -55,3 +55,23 @@ msgstr "Пользователь с данным логином имеет др�
 #: App/Models/UserModel.php:48
 msgid "Preliminary you need to sign out"
 msgstr "Предварительно вам нужно выйти из учетной записи"
+
+#: functions.php:30
+msgid "Theme Options"
+msgstr "Настройки темы"
+
+#: functions.php:32
+msgid "Text Field"
+msgstr "Текстовое поле"
+
+#: functions.php:35
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы"
+
+#: functions.php:36
+msgid "Question"
+msgstr "Вопрос"
+
+#: functions.php:37
+msgid "Answer"
+msgstr "Ответ"

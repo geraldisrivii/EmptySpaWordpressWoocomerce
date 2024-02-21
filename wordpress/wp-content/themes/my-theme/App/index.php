@@ -5,6 +5,12 @@ require_once(ABSPATH . 'wp-load.php');
 require_once(ABSPATH . 'wp-admin/includes/file.php');
 
 
+// carbon_fields
+
+require_once __DIR__ . '/CustomFields/productFields.php';
+require_once __DIR__ . '/CustomFields/themeFields.php';
+
+
 
 require_once __DIR__ . '/helpers.php';
 

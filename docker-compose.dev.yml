@@ -39,4 +39,4 @@ services:
       - "8081:80"
     environment:
       PMA_HOST: wc_db
-    container_name: wc_empty_admin
+    container_name: wc1_admin

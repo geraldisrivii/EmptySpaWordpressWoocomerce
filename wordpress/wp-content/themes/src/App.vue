@@ -13,9 +13,7 @@ let isDataLoaded: Ref<boolean> = ref(false);
 declare var preloaderClose: () => void
 
 onMounted(async () => {
-
-    isDataLoaded.value = true
-    
+    isDataLoaded.value = false
     preloaderClose()
 
 })

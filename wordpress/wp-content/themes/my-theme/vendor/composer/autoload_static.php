@@ -42,6 +42,10 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         array (
             'Ds\\' => 3,
         ),
+        'C' => 
+        array (
+            'Carbon_Fields\\' => 14,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -71,8 +75,8 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -97,6 +101,10 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         'Ds\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-ds/php-ds/src',
+        ),
+        'Carbon_Fields\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',
         ),
         'App\\' => 
         array (
