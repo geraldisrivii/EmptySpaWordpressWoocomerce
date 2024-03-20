@@ -11,7 +11,8 @@
     "phpmailer/phpmailer": "^6.8",
     "symfony/var-dumper": "^6.0",
     "guzzlehttp/guzzle": "^7.0",
-    "htmlburger/carbon-fields": "^3.6"
+    "htmlburger/carbon-fields": "^3.6",
+    "deliciousbrains/wp-migrations": "^2.1"
   },
   "autoload": {
     "psr-4": {

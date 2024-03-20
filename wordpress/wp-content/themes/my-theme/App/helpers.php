@@ -1,5 +1,6 @@
 <?php
 
+use App\Classes\Migrater;
 use App\Classes\Session;
 use App\Classes\YookassaServise;
 
@@ -9,7 +10,13 @@ function session(){
     return  $session;
 }
 function yookassa(){
-    $session = YookassaServise::getInstance();
+    $yookassa = YookassaServise::getInstance();
 
-    return  $session;
+    return  $yookassa;
+}
+
+function migrations(){
+    $migrations = Migrater::getInstance();
+
+    return  $migrations;
 }

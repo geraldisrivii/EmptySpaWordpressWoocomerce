@@ -8,6 +8,8 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
 {
     public static $files = array (
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        '3937806105cc8e221b8fa8db5b70d2f2' => __DIR__ . '/..' . '/wp-cli/mustangostang-spyc/includes/functions.php',
+        'be01b9b16925dcb22165c40b46681ac6' => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib/cli/cli.php',
         '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
@@ -24,6 +26,7 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         array (
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Component\\VarDumper\\' => 28,
+            'Symfony\\Component\\Finder\\' => 25,
         ),
         'P' => 
         array (
@@ -31,6 +34,10 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Http\\Client\\' => 16,
             'PHPMailer\\PHPMailer\\' => 20,
+        ),
+        'M' => 
+        array (
+            'Mustangostang\\' => 14,
         ),
         'G' => 
         array (
@@ -41,6 +48,7 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         'D' => 
         array (
             'Ds\\' => 3,
+            'DeliciousBrains\\WPMigrations\\' => 29,
         ),
         'C' => 
         array (
@@ -69,6 +77,10 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         array (
             0 => __DIR__ . '/..' . '/symfony/var-dumper',
         ),
+        'Symfony\\Component\\Finder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/finder',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/src',
@@ -86,6 +98,10 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         array (
             0 => __DIR__ . '/..' . '/phpmailer/phpmailer/src',
         ),
+        'Mustangostang\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/wp-cli/mustangostang-spyc/src',
+        ),
         'GuzzleHttp\\Psr7\\' => 
         array (
             0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
@@ -102,6 +118,10 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         array (
             0 => __DIR__ . '/..' . '/php-ds/php-ds/src',
         ),
+        'DeliciousBrains\\WPMigrations\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/deliciousbrains/wp-migrations/src',
+        ),
         'Carbon_Fields\\' => 
         array (
             0 => __DIR__ . '/..' . '/htmlburger/carbon-fields/core',
@@ -112,8 +132,34 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'c' => 
+        array (
+            'cli' => 
+            array (
+                0 => __DIR__ . '/..' . '/wp-cli/php-cli-tools/lib',
+            ),
+        ),
+        'W' => 
+        array (
+            'WP_CLI\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/wp-cli/wp-cli/php',
+            ),
+        ),
+        'M' => 
+        array (
+            'Mustache' => 
+            array (
+                0 => __DIR__ . '/..' . '/mustache/mustache/src',
+            ),
+        ),
+    );
+
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'WP_CLI' => __DIR__ . '/..' . '/wp-cli/wp-cli/php/class-wp-cli.php',
+        'WP_CLI_Command' => __DIR__ . '/..' . '/wp-cli/wp-cli/php/class-wp-cli-command.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
@@ -121,6 +167,7 @@ class ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit6f49da5f70d7f40ada033c055afcbf3e::$classMap;
 
         }, null, ClassLoader::class);

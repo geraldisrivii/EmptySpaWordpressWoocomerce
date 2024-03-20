@@ -1,0 +1,83 @@
+2024-03-19T09:35:01+00:00 CRITICAL Uncaught Error: Class "App\Migrations\2020_04_09_AddCustomTable" not found in /var/www/html/wp-content/themes/my-theme/App/index.php:41
+Stack trace:
+#0 [internal function]: WP_CLI\Runner->App\{closure}(Array, Array)
+#1 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/CommandFactory.php(102): call_user_func(Object(Closure), Array, Array)
+#2 [internal function]: WP_CLI\Dispatcher\CommandFactory::WP_CLI\Dispatcher\{closure}(Array, Array)
+#3 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/Subcommand.php(497): call_user_func(Object(Closure), Array, Array)
+#4 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(441): WP_CLI\Dispatcher\Subcommand->invoke(Array, Array, Array)
+#5 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(464): WP_CLI\Runner->run_command(Array, Array)
+#6 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(1295): WP_CLI\Runner->run_command_and_exit()
+#7 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php(28): WP_CLI\Runner->start()
+#8 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/bootstrap.php(83): WP_CLI\Bootstrap\LaunchRunner->process(Object(WP_CLI\Bootstrap\BootstrapState))
+#9 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/wp-cli.php(32): WP_CLI\bootstrap()
+#10 phar:///usr/local/bin/wp/php/boot-phar.php(20): include('phar:///usr/loc...')
+#11 /usr/local/bin/wp(4): include('phar:///usr/loc...')
+#12 {main}
+  thrown в /var/www/html/wp-content/themes/my-theme/App/index.php на строке 41
+
+2024-03-19T09:39:46+00:00 CRITICAL Uncaught Error: Class "App\Migrations\:AddCustomTable" not found in /var/www/html/wp-content/themes/my-theme/App/index.php:41
+Stack trace:
+#0 [internal function]: WP_CLI\Runner->App\{closure}(Array, Array)
+#1 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/CommandFactory.php(102): call_user_func(Object(Closure), Array, Array)
+#2 [internal function]: WP_CLI\Dispatcher\CommandFactory::WP_CLI\Dispatcher\{closure}(Array, Array)
+#3 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/Subcommand.php(497): call_user_func(Object(Closure), Array, Array)
+#4 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(441): WP_CLI\Dispatcher\Subcommand->invoke(Array, Array, Array)
+#5 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(464): WP_CLI\Runner->run_command(Array, Array)
+#6 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(1295): WP_CLI\Runner->run_command_and_exit()
+#7 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php(28): WP_CLI\Runner->start()
+#8 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/bootstrap.php(83): WP_CLI\Bootstrap\LaunchRunner->process(Object(WP_CLI\Bootstrap\BootstrapState))
+#9 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/wp-cli.php(32): WP_CLI\bootstrap()
+#10 phar:///usr/local/bin/wp/php/boot-phar.php(20): include('phar:///usr/loc...')
+#11 /usr/local/bin/wp(4): include('phar:///usr/loc...')
+#12 {main}
+  thrown в /var/www/html/wp-content/themes/my-theme/App/index.php на строке 41
+
+2024-03-19T09:45:33+00:00 CRITICAL Uncaught Error: Call to undefined function App\dbDelta() in /var/www/html/wp-content/themes/my-theme/App/index.php:29
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): WP_CLI\Runner->App\{closure}('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-settings.php(643): do_action('init')
+#4 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(1374): require('/var/www/html/w...')
+#5 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(1293): WP_CLI\Runner->load_wordpress()
+#6 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php(28): WP_CLI\Runner->start()
+#7 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/bootstrap.php(83): WP_CLI\Bootstrap\LaunchRunner->process(Object(WP_CLI\Bootstrap\BootstrapState))
+#8 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/wp-cli.php(32): WP_CLI\bootstrap()
+#9 phar:///usr/local/bin/wp/php/boot-phar.php(20): include('phar:///usr/loc...')
+#10 /usr/local/bin/wp(4): include('phar:///usr/loc...')
+#11 {main}
+  thrown в /var/www/html/wp-content/themes/my-theme/App/index.php на строке 29
+
+2024-03-19T09:45:44+00:00 CRITICAL Uncaught Error: Call to undefined function dbDelta() in /var/www/html/wp-content/themes/my-theme/App/index.php:29
+Stack trace:
+#0 /var/www/html/wp-includes/class-wp-hook.php(324): WP_CLI\Runner->App\{closure}('')
+#1 /var/www/html/wp-includes/class-wp-hook.php(348): WP_Hook->apply_filters(NULL, Array)
+#2 /var/www/html/wp-includes/plugin.php(517): WP_Hook->do_action(Array)
+#3 /var/www/html/wp-settings.php(643): do_action('init')
+#4 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(1374): require('/var/www/html/w...')
+#5 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(1293): WP_CLI\Runner->load_wordpress()
+#6 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php(28): WP_CLI\Runner->start()
+#7 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/bootstrap.php(83): WP_CLI\Bootstrap\LaunchRunner->process(Object(WP_CLI\Bootstrap\BootstrapState))
+#8 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/wp-cli.php(32): WP_CLI\bootstrap()
+#9 phar:///usr/local/bin/wp/php/boot-phar.php(20): include('phar:///usr/loc...')
+#10 /usr/local/bin/wp(4): include('phar:///usr/loc...')
+#11 {main}
+  thrown в /var/www/html/wp-content/themes/my-theme/App/index.php на строке 29
+
+2024-03-19T09:52:53+00:00 CRITICAL Uncaught Error: Class "AddCustomTable" not found in /var/www/html/wp-content/themes/my-theme/App/index.php:43
+Stack trace:
+#0 [internal function]: WP_CLI\Runner->App\{closure}(Array, Array)
+#1 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/CommandFactory.php(102): call_user_func(Object(Closure), Array, Array)
+#2 [internal function]: WP_CLI\Dispatcher\CommandFactory::WP_CLI\Dispatcher\{closure}(Array, Array)
+#3 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Dispatcher/Subcommand.php(497): call_user_func(Object(Closure), Array, Array)
+#4 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(441): WP_CLI\Dispatcher\Subcommand->invoke(Array, Array, Array)
+#5 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(464): WP_CLI\Runner->run_command(Array, Array)
+#6 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Runner.php(1295): WP_CLI\Runner->run_command_and_exit()
+#7 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Bootstrap/LaunchRunner.php(28): WP_CLI\Runner->start()
+#8 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/bootstrap.php(83): WP_CLI\Bootstrap\LaunchRunner->process(Object(WP_CLI\Bootstrap\BootstrapState))
+#9 phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/wp-cli.php(32): WP_CLI\bootstrap()
+#10 phar:///usr/local/bin/wp/php/boot-phar.php(20): include('phar:///usr/loc...')
+#11 /usr/local/bin/wp(4): include('phar:///usr/loc...')
+#12 {main}
+  thrown в /var/www/html/wp-content/themes/my-theme/App/index.php на строке 43
+

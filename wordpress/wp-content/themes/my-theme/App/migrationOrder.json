@@ -1,0 +1,15 @@
+[
+    "wp_actionscheduler_actions",
+    "wp_actionscheduler_claims",
+    "wp_actionscheduler_groups",
+    "wp_actionscheduler_logs",
+    "wp_commentmeta",
+    "wp_comments",
+    "wp_links",
+    "wp_options",
+    "wp_postmeta",
+    "wp_posts",
+    "wp_termmeta",
+    "wp_terms",
+    "wp_term_relationships"
+]
