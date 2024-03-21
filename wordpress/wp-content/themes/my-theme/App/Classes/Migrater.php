@@ -36,6 +36,7 @@ class Migrater
         (
             `id` INT NOT NULL AUTO_INCREMENT ,
             `migration_name` VARCHAR(40) NOT NULL ,
+            `table_name` VARCHAR(40) NOT NULL ,
             `is_migrated` BOOLEAN NOT NULL ,
          PRIMARY KEY (`id`)) ENGINE = InnoDB");
 
@@ -188,6 +189,10 @@ class Migrater
             
             if($status === true) {
                 continue;
+            }
+
+            if(){
+
             }
             
             $instance = new $classPath();

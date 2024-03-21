@@ -9,7 +9,7 @@ require_once __DIR__ . '/Migration.php';
 
 class wp_links extends Migration
 {
-    protected $dependencies = [];
+    protected $table = 'wp_links';
 
     public function up()
     {

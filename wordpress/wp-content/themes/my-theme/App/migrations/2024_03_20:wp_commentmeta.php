@@ -9,7 +9,7 @@ require_once __DIR__ . '/Migration.php';
 
 class wp_commentmeta extends Migration
 {
-    protected $dependencies = [];
+    protected $table = 'wp_commentmeta';
 
     public function up()
     {

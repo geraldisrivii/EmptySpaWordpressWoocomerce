@@ -9,7 +9,7 @@ require_once __DIR__ . '/Migration.php';
 
 class wp_termmeta extends Migration
 {
-    protected $dependencies = [];
+    protected $table = 'wp_termmeta';
 
     public function up()
     {

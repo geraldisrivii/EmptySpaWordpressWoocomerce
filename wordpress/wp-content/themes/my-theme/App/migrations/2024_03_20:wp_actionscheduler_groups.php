@@ -9,7 +9,7 @@ require_once __DIR__ . '/Migration.php';
 
 class wp_actionscheduler_groups extends Migration
 {
-    protected $dependencies = [];
+    protected $table = 'wp_actionscheduler_groups';
 
     public function up()
     {

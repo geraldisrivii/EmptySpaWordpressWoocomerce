@@ -9,7 +9,7 @@ require_once __DIR__ . '/Migration.php';
 
 class wp_postmeta extends Migration
 {
-    protected $dependencies = [];
+    protected $table = 'wp_postmeta';
 
     public function up()
     {

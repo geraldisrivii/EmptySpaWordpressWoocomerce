@@ -9,7 +9,7 @@ require_once __DIR__ . '/Migration.php';
 
 class wp_options extends Migration
 {
-    protected $dependencies = [];
+    protected $table = 'wp_options';
 
     public function up()
     {
