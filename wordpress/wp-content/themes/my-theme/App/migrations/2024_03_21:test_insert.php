@@ -7,16 +7,16 @@ namespace App\Migrations;
 require_once __DIR__ . '/Migration.php';
 
 
-class wp_terms extends Migration
+class test_insert extends Migration
 {
-    protected $table = 'wp_terms';
+    protected $table = 'wp_posts';
 
     public function up()
     {
         global $wpdb;
 
         $sql = file_get_contents(get_template_directory() . '/App/sql/' . basename(__FILE__, '.php') . '.sql');
-        
+
         dbDelta($sql);
     }
 
@@ -24,6 +24,6 @@ class wp_terms extends Migration
     {
         global $wpdb;
         
-        return $wpdb->query('DROP TABLE `wp_terms`');
+        return $wpdb->query('TRUNCATE TABLE `wp_posts`');
     }
 }

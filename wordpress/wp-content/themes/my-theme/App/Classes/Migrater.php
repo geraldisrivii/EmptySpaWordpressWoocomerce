@@ -95,9 +95,14 @@ class Migrater
     {
         $this->require_all_migrations();
 
+        
         $classPath = Migrater::$namespace . $className;
-
+        
         $instance = new $classPath();
+
+        if($this->check_table_in_db($instance->table())) {
+            $instance->rollback();            
+        }
 
         $instance->up();
 
@@ -108,11 +113,11 @@ class Migrater
     {
         $this->require_all_migrations();
 
-        if($this->check_migration_in_db($className) === false) {
+        if ($this->check_migration_in_db($className) === false) {
             return false;
         }
 
-        if($this->check_migration_status_in_db($className) === false) {
+        if ($this->check_migration_status_in_db($className) === false) {
             return false;
         }
 
@@ -167,6 +172,15 @@ class Migrater
         return $wpdb->get_row("SELECT * FROM `wp_migrations` WHERE `migration_name` = '$className'")
             ? true : false;
     }
+    private function check_table_in_db($tableName)
+    {
+        global $wpdb;
+
+        $db_name = $wpdb->dbname;
+
+        return $wpdb->get_row("SHOW TABLES FROM $db_name LIKE '$tableName'")
+            ? true : false;
+    }
 
     public function migrate_all()
     {
@@ -186,17 +200,17 @@ class Migrater
             }
 
             $status = $this->check_migration_status_in_db($className);
-            
-            if($status === true) {
+
+            if ($status === true) {
                 continue;
             }
 
-            if(){
-
-            }
-            
             $instance = new $classPath();
-            
+
+            if ($instance->table() && $this->check_table_in_db($instance->table())) {
+                $instance->rollback();
+            }
+
             $instance->up();
 
             $this->update_migration_status_in_db($className, true);
@@ -218,11 +232,11 @@ class Migrater
         $resultOfAll = [];
 
         foreach ($classNames as $className) {
-            if($this->check_migration_in_db($className) === false) {
-                $this->insert_migration_in_db($className); 
+            if ($this->check_migration_in_db($className) === false) {
+                $this->insert_migration_in_db($className);
             }
 
-            if($this->check_migration_status_in_db($className) === false) {
+            if ($this->check_migration_status_in_db($className) === false) {
                 continue;
             }
 
@@ -237,7 +251,7 @@ class Migrater
             $rolled_back_files[] = $classPath;
         }
 
-        if (in_array(false, $resultOfAll) && !empty($resultOfAll)) {
+        if (in_array(false, $resultOfAll) && !empty ($resultOfAll)) {
             return false;
         }
 

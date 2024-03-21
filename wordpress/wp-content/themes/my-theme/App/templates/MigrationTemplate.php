@@ -9,7 +9,7 @@ require_once __DIR__ . '/Migration.php';
 
 class ReplacedClass extends Migration
 {
-    protected $dependencies = [];
+    protected $table = 'wp_my_table';
 
     public function up()
     {
